@@ -45,6 +45,21 @@ module.exports = {
         96: "24rem",
         128: "32rem",
       },
+      fontSize: {
+        '4xs': '0.65rem',
+        '3xs': '0.7rem',
+        '2xs': '0.75rem',
+        xs: '0.8rem',
+        sm: '0.875rem',
+        base: '0.95rem',
+        lg: '1.125rem',
+        xl: '1.25rem',
+        '2xl': '1.5rem',
+        '3xl': '1.875rem',
+        '4xl': '2.25rem',
+        '5xl': '3rem',
+        '6xl': '4rem',
+      },
       zIndex: {
         "-10": "-10",
         "-20": "-20",
@@ -56,6 +71,9 @@ module.exports = {
         ...negative(theme("spacing")),
       }),
       maxWidth: (theme) => ({
+        ...theme("spacing"),
+      }),
+      minWidth: (theme) => ({
         ...theme("spacing"),
       }),
       minHeight: (theme) => ({

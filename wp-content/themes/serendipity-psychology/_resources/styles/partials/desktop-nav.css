@@ -26,12 +26,12 @@ Desktop Navs
 
     .current-menu-item > a,
     .current-menu-parent > a {
-      @apply text-red-500;
+      @apply text-primary;
     }
   }
 
   .sub-menu {
-    @apply absolute z-40 hidden transform -translate-x-1/2 bg-white shadow-lg opacity-0 top-full left-1/2;
+    @apply absolute z-40 hidden transform -translate-x-1/2 bg-white shadow-xl p-2 rounded-br-2xl opacity-0 top-full left-1/2;
 
     &:focus-within {
       @apply visible block opacity-100;
@@ -43,4 +43,8 @@ Desktop Navs
       @apply visible block opacity-100;
     }
   }
+}
+
+.blue-shadow {
+  box-shadow: 0 20px 20px rgba(0,43,89,0.07);
 }

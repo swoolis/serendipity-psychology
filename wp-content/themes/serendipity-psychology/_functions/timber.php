@@ -46,6 +46,10 @@
         $context['secondaryMenu'] = new Timber\Menu('Secondary Menu');
       }
       $context['footerMenu'] = new Timber\Menu('Footer Menu');
+
+      $context['spacingY'] = 'py-12 lg:py-16';
+      $context['spacingX'] = 'px-4 2xs:px-6 md:px-8 lg:px-6 xl:px-10';
+
       return $context;
     }
 

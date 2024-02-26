@@ -1,56 +1,55 @@
 {% set hero = post.meta('hero') %}
 
 <div class="w-full hero bg-grey">
-	<div class="container flex flex-wrap">
-		<div class="w-full lg:w-1/2 lg:pr-6">
-			<div class="py-8 md:py-12 lg:py-16 flex flex-col">
+	<div class="max-w-screen-4xl mx-auto flex flex-wrap relative">
+		<div class="w-full lg:w-1/2">
+			{% include "_atoms/hero-image.twig" with { classes: 'lg:hidden' } %}
+
+			<div class="{{ spacingY }} flex flex-col {{ spacingX }}">
 				{% if hero.pre_title %}<span class="mb-2 font-subheading text-2xl md:text-3xl lg:text-4xl text-primary">{{ hero.pre_title }}</span>{% endif %}
 				{% if hero.title %}<span class="font-heading text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-tight">{{ hero.title }}</span>{% endif %}
+				{% if hero.buttons %}
+					<div class="flex flex-wrap items-center mt-4 md:mt-8">
+						{% for button in hero.buttons %}
+							{% include "_atoms/button.twig" with {
+								link: button.button.url,
+								text: button.button.title,
+								colour: button.colour,
+								classes: 'mt-2 mr-2',
+							} %}
+						{% endfor %}
+					</div>
+				{% endif %}
+			</div>
+
+			<div class="bg-primary rounded-tr-4xl lg:rounded-tr-5xl">
+				<div class="{{ spacingY }} {{ spacingX }}">
+					<div class="flex flex-wrap -m-4 lg:pr-16">
+						{% for item in hero.usps %}
+							<div class="w-full sm:w-1/2 flex flex-col p-4">
+								<img src="{{ item.icon.url|resize(100) }}" class="w-12 h-12 object-contain mb-3">
+								<span class="text-lg text-secondary leading-tight font-heading pr-2">{{ item.text }}</span>
+							</div>
+						{% endfor %}
+					</div>
+				</div>
 			</div>
 		</div>
-		<div class="w-full lg:w-1/2 lg:pl-6">
-			{% include "_components/picture.twig" with {
-				source: post.thumbnail.src,
-				lazyload: false,
-				breakpoints: {
-				"1530px" : {
-					w: 1800,
-					h: 500,
-					crop: 'center'
-				},
-				"1280px" : {
-					w: 1530,
-					h: 500,
-					crop: 'center'
-				},
-				"1024px" : {
-					w: 1280,
-					h: 500,
-					crop: 'center'
-				},
-				"768px" : {
-					w: 1024,
-					h: 500,
-					crop: 'center'
-				},
-				"640px" : {
-					w: 768,
-					h: 400,
-					crop: 'center'
-				},
-				"1px" : {
-					w: 640,
-					h: 640,
-					crop: 'center'
-				},
-				},
-				img: {
-				classes: '',
-				w: 640,
-				h: 640,
-				crop: 'center',
-				}
-			} %}
+		<div class="top-0 right-0 w-full lg:w-1/2 lg:pb-32 relative">
+			{% include "_atoms/hero-image.twig" with { classes: 'hidden lg:block' } %}
+
+			{% if hero.show_insurance_providers %}
+				<div class="py-8 lg:py-0 lg:absolute lg:left-0 lg:bottom-6 w-full flex flex-wrap xl:flex-nowrap justify-between items-center {{ spacingX }}">
+					<span class="font-heading text-primary leading-tight mb-2 xl:mb-0">
+						Insurance <br class="hidden xl:block">Providers
+					</span>
+					<div class="-mx-2 xl:ml-8 xl:mr-0 w-full flex flex-wrap xs:justify-between items-center md:flex-nowrap">
+						{% for logo in options.insurance_providers %}
+							<div class="p-2"><img src="" data-src="{{ logo.url|resize(200) }}" class="lazyload max-w-20 max-h-16 object-contain object-center"></div>
+						{% endfor %}
+					</div>
+				</div>
+			{% endif %}
 		</div>
 	</div>
 </div>

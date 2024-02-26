@@ -21,3 +21,15 @@ Buttons
     @apply text-secondary;
   }
 }
+
+.btn-secondary {
+  @apply text-black bg-secondary;
+
+  &:hover {
+    @apply bg-secondary-dark;
+  }
+
+  .icon {
+    @apply text-primary;
+  }
+}

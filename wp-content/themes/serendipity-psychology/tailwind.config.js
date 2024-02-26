@@ -13,7 +13,7 @@ module.exports = {
       xl: "1280px",
       "2xl": "1400px",
       "3xl": "1600px",
-      "4xl": "1900px",
+      "4xl": "1800px",
     },
     fontFamily: {
       sans: ["DM Sans", "sans-serif"],
@@ -63,6 +63,10 @@ module.exports = {
         '6xl': '3rem',
         '7xl': '3.5rem',
         '8xl': '4rem',
+      },
+      borderRadius: {
+        '4xl': '8rem',
+        '5xl': '16rem',
       },
       zIndex: {
         "-10": "-10",

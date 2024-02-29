@@ -6,6 +6,8 @@ body,
 html {
   min-height: 101%;
   scroll-behavior: smooth;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -64,4 +66,10 @@ Trustindex **************************************************/
 Shadows **************************************************/
 .blue-shadow {
   box-shadow: 0 20px 30px rgba(0,43,89,0.07);
+}
+
+/***********************************************************
+Testimonials **************************************************/
+.more {
+  display: none;
 }

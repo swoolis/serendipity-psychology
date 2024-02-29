@@ -27,7 +27,10 @@ module.exports = {
     extend: {
       colors: {
         black: '#1F1D33',
-        grey: '#EDF3FA',
+        grey: {
+          DEFAULT: '#EDF3FA',
+          dark: "#C8D5DF",
+        },
         primary: {
           pale: "#EDF3FA",
           light: "#7285b5",
@@ -67,6 +70,9 @@ module.exports = {
       borderRadius: {
         '4xl': '8rem',
         '5xl': '16rem',
+      },
+      scale: {
+        '103': '1.03',
       },
       zIndex: {
         "-10": "-10",

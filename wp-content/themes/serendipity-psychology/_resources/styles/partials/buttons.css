@@ -3,10 +3,10 @@ Buttons
 --------------------------------------------------- */
 
 .btn {
-  @apply inline-flex items-center px-5 py-2.5 rounded-tl-2xl transition duration-300 font-medium text-sm;
+  @apply inline-flex items-center px-5 py-3 rounded-tl-2xl transition duration-300 font-medium text-sm leading-tight;
 
   .icon {
-    @apply text-3xs ml-2;
+    @apply text-3xs ml-2 min-w-4;
   }
 }
 
@@ -27,6 +27,18 @@ Buttons
 
   &:hover {
     @apply bg-secondary-dark;
+  }
+
+  .icon {
+    @apply text-primary;
+  }
+}
+
+.btn-grey {
+  @apply text-black bg-grey;
+
+  &:hover {
+    @apply bg-grey-dark;
   }
 
   .icon {

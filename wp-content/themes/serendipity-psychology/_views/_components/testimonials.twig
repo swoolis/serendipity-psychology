@@ -1,0 +1,14 @@
+{# {% set care_pathways = options.care_pathways %} #}
+<div class="{{ spacingY }} bg-grey">
+    <div class="container">
+        <div class="relative -m-4">
+            <div class="flex flex-wrap js-testimonials-slider">
+                {% for testimonial in testimonials %}
+                    <div class="w-full p-4">
+                        {% include "_atoms/testimonial-card.twig" %}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+{% set care_pathways = options.care_pathways %}
+<div class="{{ spacingY }}">
+    <div class="container">
+        <div class="flex flex-wrap">
+            <div class="flex flex-col items-start w-full lg:pr-12 lg:w-2/5">
+                <span class="text-primary font-heading text-4xl md:text-5xl lg:text-6xl leading-tight mb-3 block">{{ care_pathways.title }}</span>
+                <div class="copy">{{ care_pathways.copy }}</div>
+                {% if care_pathways.buttons %}
+                    {% for button in care_pathways.buttons %}
+                        {% include "_atoms/button.twig" with {
+                            link: button.button.url,
+                            text: button.button.title,
+                            colour: button.colour,
+                            classes: 'mt-6 mb-8',
+                        } %}
+                    {% endfor %}
+                {% endif %}
+
+                {% set cta = care_pathways.cta %}
+                <a href="{{ cta.link.url }}" class="mt-auto p-6 bg-secondary-pale flex flex-col relative transform transition-all hover:scale-103">
+                    {% if cta.pre_title %}<span class="mb-2 font-subheading text-2xl md:text-3xl text-primary">{{ cta.pre_title }}</span>{% endif %}
+				    {% if cta.title %}<span class="font-heading text-2xl md:text-3xl leading-tight">{{ cta.title }}</span>{% endif %}
+                    <span class="absolute bottom-0 right-0 w-12 h-12 flex justify-center items-center bg-primary rounded-tl-xl text-white">{{ fn('icon','angles-right','w-6 h-6') }}</span>
+                </a>
+            </div>
+
+            <div class="w-full lg:w-3/5 lg:pl-6 mt-8">
+                <div class="-m-4 relative">
+                    <div class="flex flex-wrap js-carePathways-slider">
+                        {% for post in care_pathways.buckets %}
+                            <div class="w-full xs:w-1/2 md:w-1/3 p-4">
+                                {% include "_atoms/bucket.twig" %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

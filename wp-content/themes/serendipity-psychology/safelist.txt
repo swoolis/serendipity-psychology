@@ -22,3 +22,8 @@ lg:pt-16
 pb-12
 lg:pb-16
 2xl:pb-20
+sr-only
+grid
+sm:grid-cols-2
+gap-4
+sm:col-span-2

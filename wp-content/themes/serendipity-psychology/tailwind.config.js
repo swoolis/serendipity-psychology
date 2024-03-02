@@ -42,6 +42,7 @@ module.exports = {
           light: "#dfeded",
           DEFAULT: "#BFDDDD",
           dark: "#8FC6C6",
+          extraDark: "#509e9e",
         },
       },
       spacing: {

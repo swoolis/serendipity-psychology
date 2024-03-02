@@ -44,9 +44,7 @@
 						Insurance <br class="hidden xl:block">Providers
 					</span>
 					<div class="-mx-2 xl:ml-8 xl:mr-0 w-full flex flex-wrap xs:justify-between items-center md:flex-nowrap">
-						{% for logo in options.insurance_providers %}
-							<div class="p-2"><img src="" data-src="{{ logo.url|resize(200) }}" class="lazyload max-w-20 max-h-16 object-contain object-center"></div>
-						{% endfor %}
+						{% include "_atoms/logos.twig" %}
 					</div>
 				</div>
 			{% endif %}

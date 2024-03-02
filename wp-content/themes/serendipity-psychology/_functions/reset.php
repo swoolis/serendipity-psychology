@@ -94,3 +94,8 @@ add_action('wp_head', function() {
  * Prevent theme edit
  */
 // define( 'DISALLOW_FILE_EDIT', true );
+
+/**
+ * Remove p tags from CF7
+ */
+add_filter('wpcf7_autop_or_not', '__return_false');

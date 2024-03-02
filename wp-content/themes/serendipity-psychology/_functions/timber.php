@@ -47,6 +47,30 @@
       }
       $context['footerMenu'] = new Timber\Menu('Footer Menu');
 
+      $carePathways = [
+          'post_type' => 'care-pathways',
+          'posts_per_page' => -1,
+      ];
+      $context['carePathways'] = new Timber\PostQuery($carePathways);
+
+      $specialistTherapies = [
+          'post_type' => 'specialist-therapies',
+          'posts_per_page' => -1,
+      ];
+      $context['specialistTherapies'] = new Timber\PostQuery($specialistTherapies);
+
+      $conditions = [
+        'post_type' => 'conditions',
+        'posts_per_page' => -1,
+    ];
+    $context['conditions'] = new Timber\PostQuery($conditions);
+
+    $testimonials = [
+        'post_type' => 'testimonials',
+        'posts_per_page' => 10,
+    ];
+    $context['testimonials'] = new Timber\PostQuery($testimonials);
+
       $context['spacingY'] = 'py-12 lg:py-16 2xl:py-20';
       $context['spacingT'] = 'pt-12 lg:pt-16 2xl:pt-20';
       $context['spacingB'] = 'pb-12 lg:pb-16 2xl:pb-20';

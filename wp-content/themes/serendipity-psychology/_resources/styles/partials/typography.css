@@ -16,86 +16,104 @@ h5,
 .h5,
 h6,
 .h6 {
-  @apply mb-4 font-light font-heading leading-snug;
+    @apply mb-4 font-light font-heading leading-snug;
 }
 
 h1 {
-  @apply text-3xl;
+    @apply text-4xl xs:text-5xl 3xl:text-6xl;
 }
 
 h2 {
-  @apply text-2xl;
+    @apply text-3xl xs:text-4xl 3xl:text-5xl;
 }
 
 h3 {
-  @apply text-xl;
+    @apply text-2xl xs:text-3xl 3xl:text-4xl;
 }
 
 /* Copy */
 
 .copy {
-  > p {
-    @apply mb-6 leading-relaxed;
+    > p {
+        @apply mb-6 leading-relaxed;
 
-    &:last-of-type {
-      @apply mb-0;
+        /* &:last-of-type {
+            @apply mb-0;
+        } */
     }
-  }
 
-  a {
-    @apply inline-block text-primary;
-
-    &:hover {
-      @apply underline;
+    h1,h2,h3,h4,h5,h6 {
+        @apply text-primary;
     }
-  }
 
-  ol,
-  ul {
-    @apply pl-4 mb-8;
+    a {
+        @apply inline-block text-primary;
 
-    li {
-      @apply mb-2 leading-relaxed;
+        &:hover {
+            @apply underline;
+        }
     }
-  }
 
-  ul {
-    li {
-      @apply list-disc;
+    ol,
+    ul {
+        @apply pl-4 mb-8;
+
+        li {
+            @apply mb-2 leading-relaxed;
+        }
     }
-  }
 
-  ol {
-    li {
-      @apply list-decimal;
+    ul {
+        li {
+            @apply list-disc;
+        }
     }
-  }
 
-  blockquote {
-    @apply p-4 mb-8 bg-gray-100;
-  }
+    ol {
+        li {
+            @apply list-decimal;
+        }
+    }
+
+    blockquote {
+        @apply p-4 mb-8 bg-gray-100;
+    }
+
+    .styled-list {
+        @apply px-6 py-4 bg-grey flex flex-wrap;
+
+        li {
+            @apply flex items-start w-full sm:w-1/2 sm:pr-4 list-none leading-tight my-2;
+
+            &::before {
+                content: '';
+                @apply inline-block min-w-4 w-4 h-4 mr-2 bg-center bg-contain bg-no-repeat;
+                background-image: url('/wp-content/themes/serendipity-psychology/_resources/images/icons/check-double-primary.png');
+            }
+        }
+    }
 }
 
 @screen md {
-  .copy {
-    img {
-      @apply w-auto;
-    }
+    .copy {
+        img {
+            @apply w-auto;
+        }
 
-    .alignleft {
-      @apply float-left mt-1 mb-1 mr-1;
-    }
+        .alignleft {
+            @apply float-left mt-1 mb-1 mr-1;
+        }
 
-    .aligncenter {
-      @apply float-none mx-auto my-0;
-    }
+        .aligncenter {
+            @apply float-none mx-auto my-0;
+        }
 
-    .alignright {
-      @apply float-right mt-1 mb-1 ml-1;
+        .alignright {
+            @apply float-right mt-1 mb-1 ml-1;
+        }
     }
-  }
 }
 
 .pre-title {
-  @apply text-2xl md:text-3xl lg:text-4xl xl:text-[2.3rem];
+    @apply text-2xl md:text-3xl lg:text-4xl 3xl:text-[2.3rem];
 }

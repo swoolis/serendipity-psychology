@@ -49,18 +49,24 @@
 
       $carePathways = [
           'post_type' => 'care-pathways',
+          'orderby' => 'title',
+          'order' => 'ASC',
           'posts_per_page' => -1,
       ];
       $context['carePathways'] = new Timber\PostQuery($carePathways);
 
       $specialistTherapies = [
           'post_type' => 'specialist-therapies',
+          'orderby' => 'title',
+          'order' => 'ASC',
           'posts_per_page' => -1,
       ];
       $context['specialistTherapies'] = new Timber\PostQuery($specialistTherapies);
 
       $conditions = [
         'post_type' => 'conditions',
+        'orderby' => 'title',
+        'order' => 'ASC',
         'posts_per_page' => -1,
     ];
     $context['conditions'] = new Timber\PostQuery($conditions);

@@ -30,24 +30,52 @@ if (typeof (testimonials) != 'undefined' && testimonials != null) {
     });
 }
 
-var carePathways = document.querySelector('.js-carePathways-slider');
+var bucketsMob = document.querySelector('.js-bucketsMob-slider');
 
-if (typeof (carePathways) != 'undefined' && carePathways != null) {
-    let carePathways = document.querySelector('.js-carePathways-slider');
+if (typeof (bucketsMob) != 'undefined' && bucketsMob != null) {
+    let bucketsMob = document.querySelector('.js-bucketsMob-slider');
 
     let slider = new tns({
-        container: carePathways,
+        container: bucketsMob,
         items: 1,
         gutter: 0,
         responsive: {
             480: {
+                items: 2
+            },
+            600: {
+                items: 3
+            },
+            1024: {
                 disable: true
             },
         },
         autoplay: false,
         loop: false,
         mouseDrag: true,
-        controls: false,
+        controls: true,
+        controlsContainer: ".tns-controls-bucketsMob",
+        nav: true,
+        autoHeight: true,
+        lazyload: true
+    });
+}
+
+
+var bucketsDesktop = document.querySelector('.js-bucketsDesktop-slider');
+
+if (typeof (bucketsDesktop) != 'undefined' && bucketsDesktop != null) {
+    let bucketsDesktop = document.querySelector('.js-bucketsDesktop-slider');
+
+    let slider = new tns({
+        container: bucketsDesktop,
+        items: 1,
+        gutter: 0,
+        autoplay: false,
+        loop: false,
+        mouseDrag: true,
+        controls: true,
+        controlsContainer: ".tns-controls-bucketsDesktop",
         nav: true,
         autoHeight: true,
         lazyload: true

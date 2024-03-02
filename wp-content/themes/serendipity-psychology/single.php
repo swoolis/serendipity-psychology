@@ -9,7 +9,11 @@ $context['categories'] = get_categories( array(
     'order'   => 'ASC'
 ) );
 
-Timber::render( [ 'single.twig' ], $context );
+if(is_singular( array('care-pathways', 'specialist-therapies', 'conditions') )) {
+  Timber::render( [ 'page.twig' ], $context );
+} else {
+  Timber::render( [ 'single.twig' ], $context );
+}
 
 if (is_single()) { ?>
 <script type="text/javascript">
